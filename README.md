@@ -16,12 +16,5 @@ The cache search sequence is followed by the description in Hennessy's Computer 
 
 
 
-LRU design:
 
 The LRU structure is achieved by two arrays. Here the unified TLB is used as an example. Each block is associated with one example of a structure to store the TLB tag, page number corresponding to the TLB tag, and if there’s such data stored in the unit. Another array of the whole unified TLB unit is used to store the time stamp for recognition of the last used time of each block.
-
-
-When a certain data is referred, its time stamp changes to the size of the TLB, and the time stamp of all other data with the same TLB tag decreases by 1.
-
-
-When the data is not found in the TLB, it’ll be searched in the page table and added into TLB. If the TLB is full, the algorithm will choose the one with the minimum time stamp among the data with the same TLB tag, and replace it with the new data.
